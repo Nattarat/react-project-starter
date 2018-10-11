@@ -12,11 +12,9 @@ import {
 } from 'context'
 
 export class RouteContainer extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    context.setContext({
-      routeHistory: this.props.history
-    })
+    context.setRedirect(this.props.history.push)
   }
 
   render() {

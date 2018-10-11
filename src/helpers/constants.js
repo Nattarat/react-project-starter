@@ -1,4 +1,11 @@
 export const ROUTE_PATH = {
-  LOGIN: '/',
-  SITE: '/Site'
+  HOME: {
+    TEXT: 'Home',
+    LINK: '/'
+  },
+
+  ABOUT: {
+    TEXT: 'About',
+    LINK: '/about'
+  }
 }
