@@ -8,10 +8,10 @@ import {
 class ExampleChildren extends React.PureComponent {
   render () {
     const {
-      ui,
-      uiFor,
       className,
-      children
+      children,
+      ui,
+      uiFor
     } = this.props
 
     // props for css classes
@@ -44,6 +44,19 @@ export class Example extends React.PureComponent {
 
   static propTypes = { // TYPE > node, string, func, bool
     /**
+    * [Example] and [Example.Children] - additional classes
+    */
+    className: PropTypes.string,
+
+    /**
+    * [Example] and [Example.Children] - additional elements or text
+    */
+    children: PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.string
+    ]),
+
+    /**
     * [Example] - modifier name for change default multiple UI (parent and children), can reuse
     */
     ui: PropTypes.oneOf([
@@ -59,19 +72,6 @@ export class Example extends React.PureComponent {
     ]),
 
     /**
-    * [Example] and [Example.Children] - additional classes
-    */
-    className: PropTypes.string,
-
-    /**
-    * [Example] and [Example.Children] - additional elements or text
-    */
-    children: PropTypes.oneOfType([
-      PropTypes.node,
-      PropTypes.string
-    ]),
-
-    /**
     * [Example] - source icon (path/url)
     */
     srcIcon: PropTypes.string
@@ -81,10 +81,10 @@ export class Example extends React.PureComponent {
 
   render () {
     const {
-      ui,
-      uiFor,
       className,
       children,
+      ui,
+      uiFor,
       srcIcon
     } = this.props
 
